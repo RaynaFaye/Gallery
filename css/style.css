@@ -1,0 +1,88 @@
+body {
+  background-color: rgb(39, 48, 87);
+}
+
+.galleries {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 3rem;
+}
+
+.galleries h1 {
+  text-align: center;
+  color: white;
+}
+
+.gallery {
+  padding: 1rem;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+}
+
+.gallery h2 {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.gallery img {
+  width: 100%;
+  object-fit: cover;
+  border: 2px solid rgb(39, 48, 87);
+  cursor: pointer;
+}
+.gallery img:focus {
+  outline: 5px solid rgb(255, 0, 191);
+}
+
+.modal {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transform: translateY(-100vh);
+  transition: all 0.5s;
+}
+.modal.open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-inner {
+  margin: 2rem;
+  max-width: 1000px;
+  background: white;
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+}
+
+.modal figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal img {
+  width: 80%;
+}
+
+.modal figcaption {
+  text-align: center;
+}
+
+button {
+  background-color: rgb(39, 48, 87);
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+}
